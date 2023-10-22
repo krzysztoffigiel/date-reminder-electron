@@ -12,7 +12,7 @@
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link active">
-                <i class="fas fa-user"></i> User Profile
+                <i class="fas fa-user"></i>User Profile
               </a>
             </li>
             <!-- Calling SignOut() Api from AuthService -->
@@ -37,11 +37,29 @@
                 <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
                   alt="{{user.displayName}}">
                 <div class="media-body">
-                  <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                  <p>User ID: <strong>{{user.uid}}</strong></p>
-                  <p>Email: <strong>{{user.email}}</strong></p>
+                  <h1>Użytkownik: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                  <p>ID Użytkownika: <strong>{{user.uid}}</strong></p>
+                  <p>E-mail: <strong>{{user.email}}</strong></p>
                   <!-- <p>Email Verified: <strong>{{user.emailVerified}}</strong></p> -->
                 </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Zdolności lekarskie</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
               </div>
             </div>
           </div>

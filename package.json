@@ -1,11 +1,17 @@
 {
   "name": "date-reminder",
-  "main": "main.js",
+  "main": "dist/electronng/index.js",
+  "build": {
+    "files": [
+      "dist/electrong"
+    ]
+  },
   "version": "0.0.0",
   "scripts": {
-    "electron": "ng build && electron .",
+    "electron": "wait-on http://localhost:4200 && electron .",
     "ng": "ng",
-    "start": "ng serve",
+    "prestart": "npm run",
+    "start": "concurrently -k \"ng serve\" \"npm run electron\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -32,6 +38,7 @@
     "@angular/cli": "^16.2.5",
     "@angular/compiler-cli": "^16.2.0",
     "@types/jasmine": "~4.3.0",
+    "concurrently": "^8.2.2",
     "electron": "^26.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
@@ -39,6 +46,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.1.3"
+    "typescript": "~5.1.3",
+    "wait-on": "^7.0.1"
   }
 }
